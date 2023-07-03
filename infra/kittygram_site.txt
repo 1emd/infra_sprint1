@@ -1,0 +1,5 @@
+IP: 51.250.108.117;
+name_taski: https://tasksmaster.ddns.net;
+name_kittygram: https://meowkittygram.ddns.net;
+login: adminkir;
+password: Adminkir; 

@@ -1,0 +1,77 @@
+server {
+    server_name 51.250.108.117 tasksmaster.ddns.net;
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000;
+    }
+
+    location /admin/ {
+        proxy_pass http://127.0.0.1:8000;
+    }
+
+    location / {
+        root   /var/www/taski;
+        index  index.html index.htm;
+        try_files $uri /index.html;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/tasksmaster.ddns.net/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/tasksmaster.ddns.net/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = tasksmaster.ddns.net) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    listen 80;
+    server_name 51.250.108.117 tasksmaster.ddns.net;
+    return 404; # managed by Certbot
+
+}
+server {
+    server_name  meowkittygram.ddns.net;
+    location /api/ {
+        proxy_pass http://127.0.0.1:8080;
+    }
+    location /admin/ {
+        proxy_pass http://127.0.0.1:8080;
+    }
+    location /media/ {
+        alias /var/www/infra_sprint1/media/;
+    types {
+        image/jpeg jpeg jpg;
+        image/png png;
+    }
+    }
+    location / {
+        root   /var/www/infra_sprint1;
+        index  index.html index.htm;
+        try_files $uri /index.html;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/meowkittygram.ddns.net/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/meowkittygram.ddns.net/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    if ($host = meowkittygram.ddns.net) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name  meowkittygram.ddns.net;
+    return 404; # managed by Certbot
+
+
+}
