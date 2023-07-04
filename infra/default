@@ -60,7 +60,6 @@ server {
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 }
-
 server {
     if ($host = meowkittygram.ddns.net) {
         return 301 https://$host$request_uri;
