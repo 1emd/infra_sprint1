@@ -27,8 +27,6 @@ server {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
-
-
     listen 80;
     server_name 51.250.108.117 tasksmaster.ddns.net;
     return 404; # managed by Certbot
@@ -68,10 +66,8 @@ server {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
-
     listen 80;
     server_name  meowkittygram.ddns.net;
     return 404; # managed by Certbot
-
 
 }
