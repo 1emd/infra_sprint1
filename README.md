@@ -204,3 +204,6 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 ```
 sudo certbot --nginx
 ```
+
+### Автор:
+[Кирилл Хорошилов](https://github.com/1emd)
