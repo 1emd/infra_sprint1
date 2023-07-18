@@ -3,14 +3,6 @@
 ## Описание проекта
 Пользователи могут регистрироваться, загружать фотографии с описанием и смотреть питомцев других пользователей.
 
-## Технологии
-
- - Python 3.9
- - Django==3.2.3
- - djangorestframework==3.12.4
- - Nginx
- - gunicorn
-
 ## Установка
 <i>Примечание: Все примеры указаны для Linux</i><br>
 <br>1. Клонировать репозиторий::
@@ -205,5 +197,13 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 sudo certbot --nginx
 ```
 
-### Автор:
+## Технологии
+
+ - Python 3.9
+ - Django==3.2.3
+ - djangorestframework==3.12.4
+ - Nginx
+ - gunicorn
+
+## Автор:
 [Кирилл Хорошилов](https://github.com/1emd)
